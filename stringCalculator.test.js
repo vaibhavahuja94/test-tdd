@@ -19,5 +19,10 @@ describe('add function', () => {
 
   test("should support custom delimiter", () => {
     expect(add("//;\n1;2")).toBe(3);
-});
+ });
+
+ test("should support special character delimiters", () => {
+  expect(add("//.\n4.5.6")).toBe(15);
+ });
+ 
 });
