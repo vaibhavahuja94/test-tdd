@@ -18,11 +18,18 @@ function add(numbers) {
 
     const numArray = numbers.split(delimiter).map(Number);
     let sum = 0;
+    let negatives = [];
 
     for (let i = 0; i < numArray.length; i++) {
-        if (numArray[i] <= 1000) {
+        if (numArray[i] < 0) {
+            negatives.push(numArray[i]);
+        } else if (numArray[i] <= 1000) {
             sum += numArray[i];
         }
+    }
+
+    if (negatives.length > 0) {
+        throw new Error(`Negatives not allowed: ${negatives.join(", ")}`);
     }
 
     return sum;
