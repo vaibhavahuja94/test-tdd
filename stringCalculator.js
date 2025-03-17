@@ -20,7 +20,9 @@ function add(numbers) {
     let sum = 0;
 
     for (let i = 0; i < numArray.length; i++) {
-        sum += numArray[i];
+        if (numArray[i] <= 1000) {
+            sum += numArray[i];
+        }
     }
 
     return sum;

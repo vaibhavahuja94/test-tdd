@@ -24,5 +24,9 @@ describe('add function', () => {
  test("should support special character delimiters", () => {
   expect(add("//.\n4.5.6")).toBe(15);
  });
+
+ test("should ignore numbers greater than 1000", () => {
+  expect(add("2,1001")).toBe(2);
+ });
  
 });
