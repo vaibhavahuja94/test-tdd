@@ -9,4 +9,8 @@ describe('add function', () => {
     expect(add("5")).toBe(5);
   });
 
+  test("should return the sum of two numbers separated by comma", () => {
+    expect(add("1,2")).toBe(3);
+  });
+
 });

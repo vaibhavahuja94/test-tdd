@@ -9,7 +9,14 @@
 function add(numbers) {
     if (numbers === "") return 0;
     if (!numbers.includes(",")) return parseInt(numbers, 10);
-    return 0;
+    const numArray = numbers.split(",").map(Number);
+    let sum = 0;
+
+    for (let i = 0; i < numArray.length; i++) {
+        sum += numArray[i];
+    }
+
+    return sum;
 }
 
 module.exports = { add };
