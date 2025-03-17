@@ -8,9 +8,15 @@
  */
 function add(numbers) {
     if (numbers === "") return 0;
-    if (!numbers.includes(",") && !numbers.includes("\n")) return parseInt(numbers, 10);
+    
+    let delimiter = /,|\n/;
+    if (numbers.startsWith("//")) {
+        const parts = numbers.split("\n");
+        delimiter = new RegExp(parts[0].slice(2));
+        numbers = parts[1];
+    }
 
-    const numArray = numbers.split(/,|\n/).map(Number);
+    const numArray = numbers.split(delimiter).map(Number);
     let sum = 0;
 
     for (let i = 0; i < numArray.length; i++) {
