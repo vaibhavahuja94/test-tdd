@@ -9,16 +9,14 @@
 function add(numbers) {
     if (numbers === "") return 0;
 
-    let delimiter = /,|\n/;  // Default delimiters: comma and newline
+    let delimiter = /,|\n/;
 
     if (numbers.startsWith("//")) {
         const parts = numbers.split("\n");
 
         if (parts[0].includes("[") && parts[0].includes("]")) {
-            // Multiple delimiters
             delimiter = new RegExp(extractMultipleDelimiters(parts[0]));
         } else {
-            // Single custom delimiter
             delimiter = new RegExp(extractDelimiter(parts[0]));
         }
 
