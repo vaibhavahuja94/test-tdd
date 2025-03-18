@@ -17,13 +17,13 @@ describe('add function', () => {
     expect(add("1\n2,3")).toBe(6);
  });
 
-//   test("should support custom delimiter", () => {
-//     expect(add("//;\n1;2")).toBe(3);
-//  });
+  test("should support custom delimiter", () => {
+    expect(add("//;\n1;2")).toBe(3);
+ });
 
-//  test("should support special character delimiters", () => {
-//   expect(add("//.\n4.5.6")).toBe(15);
-//  });
+ test("should support special character delimiters", () => {
+  expect(add("//.\n4.5.6")).toBe(15);
+ });
 
  test("should ignore numbers greater than 1000", () => {
   expect(add("2,1001")).toBe(2);
@@ -35,14 +35,38 @@ describe('add function', () => {
 
  test("should support single custom delimiter of any length", () => {
   expect(add("//[***]\n1***2***3")).toBe(6);
-});
+ });
 
-test("should ignore numbers greater than 1000 with custom delimiter", () => {
-  expect(add("//[***]\n2***1001***3")).toBe(5);
-});
+  test("should ignore numbers greater than 1000 with custom delimiter", () => {
+    expect(add("//[***]\n2***1001***3")).toBe(5);
+  });
 
-test("should throw error for negative numbers with custom delimiter", () => {
-  expect(() => add("//[***]\n1***-2***3")).toThrow("Negatives not allowed: -2");
-});
+  test("should throw error for negative numbers with custom delimiter", () => {
+    expect(() => add("//[***]\n1***-2***3")).toThrow("Negatives not allowed: -2");
+  });
+
+  test("should support multiple custom delimiters of any length", () => {
+    expect(add("//[***][%%]\n1***2%%3")).toBe(6);
+  });
+
+  test("should ignore numbers greater than 1000 with multiple delimiters", () => {
+    expect(add("//[***][%%]\n2***1001%%3")).toBe(5);
+  });
+
+  test("should throw error for negative numbers with multiple delimiters", () => {
+    expect(() => add("//[***][%%]\n1***-2%%3")).toThrow("Negatives not allowed: -2");
+  });
+
+  test("should support multiple custom delimiters of any length", () => {
+    expect(add("//[***][%%]\n1***2%%3")).toBe(6);
+  });
+
+  test("should ignore numbers greater than 1000 with multiple delimiters", () => {
+    expect(add("//[***][%%]\n2***1001%%3")).toBe(5);
+  });
+
+  test("should throw error for negative numbers with multiple delimiters", () => {
+    expect(() => add("//[***][%%]\n1***-2%%3")).toThrow("Negatives not allowed: -2");
+  });
 
 });
