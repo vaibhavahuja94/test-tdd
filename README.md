@@ -1,7 +1,7 @@
 # test-tdd
 
 1. Installation
-    git clone [text](https://github.com/vaibhavahuja94/test-tdd)
+    git clone https://github.com/vaibhavahuja94/test-tdd
     cd test-tdd
 
 2. Install dependencies:
@@ -22,4 +22,4 @@
 
 If you have any questions or suggestions, feel free to reach out:
 📧 Email: work.vaibhavahuja@gmail.com
-💻 GitHub: [text](https://github.com/vaibhavahuja94)
+💻 GitHub: [Vaibhav Ahuja](https://github.com/vaibhavahuja94)
