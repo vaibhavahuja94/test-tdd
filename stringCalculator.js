@@ -1,10 +1,10 @@
 /**
- * Adds numbers from a string input, supporting commas as delimiters.
- * If the input string is empty, returns 0.
- * If the string contains a single number, returns that number.
- * If multiple numbers are provided, returns their sum.
- * @param {string} numbers - The input string with numbers and delimiters.
+ * Adds numbers from a string input, supporting multiple delimiters, negative number checks,
+ * and ignoring numbers larger than 1000.
+ * 
+ * @param {string} numbers - The input string containing numbers and delimiters.
  * @returns {number} The sum of valid numbers.
+ * @throws {Error} If negative numbers are found.
  */
 function addString(numbers) {
     if (numbers === "") return 0;
