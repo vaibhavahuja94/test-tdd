@@ -6,7 +6,7 @@
  * @param {string} numbers - The input string with numbers and delimiters.
  * @returns {number} The sum of valid numbers.
  */
-function add(numbers) {
+function addString(numbers) {
     if (numbers === "") return 0;
 
     let delimiter = /,|\n/;
@@ -77,4 +77,4 @@ function extractMultipleDelimiters(header) {
     return delimiters.join("|");
 }
 
-module.exports = { add };
+module.exports = { addString };
