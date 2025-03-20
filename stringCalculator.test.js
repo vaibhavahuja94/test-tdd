@@ -5,6 +5,10 @@ describe('addString function', () => {
     expect(addString("")).toBe(0);
   });
 
+  test('should return 0 for undefined string', () => {
+    expect(addString()).toBe(0);
+  });
+
   test("should return the number itself for single number input", () => {
     expect(addString("5")).toBe(5);
   });

@@ -7,7 +7,7 @@
  * @throws {Error} If negative numbers are found.
  */
 function addString(numbers) {
-    if (numbers === "") return 0;
+    if (!numbers) return 0;
 
     let delimiter = /,|\n/;
 
